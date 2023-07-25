@@ -1,0 +1,73 @@
+@use '../../../styles/abstract/' as a;
+
+.sliderContent {
+  margin-top: a.$margin-medium;
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+  opacity: 0;
+  transform: translateY(a.rem(40));
+  transition: opacity 1.5s ease, transform 1.5s ease;
+
+  &::after {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.09) 30%,
+      rgba(0, 0, 0, 0.05) 50%,
+      rgba(0, 0, 0, 0.09) 70%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+
+  @include a.breakpoint(tablet) {
+    margin-top: a.$margin-big;
+  }
+
+  &__slideItemsWrapper {
+    width: 100%;
+    height: 4rem;
+
+    @include a.centerItem();
+  }
+
+  &__slideItems {
+    width: 100%;
+    height: 100%;
+    border-radius: a.rem(5);
+    @include a.centerItem;
+    gap: 1rem;
+
+    p {
+      color: rgb(255, 255, 255, 0.8);
+      font-size: 1rem;
+      font-weight: bold;
+      width: max-content;
+      margin-block: auto;
+      @include a.breakpoint(tablet) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__Icon {
+    width: 3rem;
+    height: 4rem;
+    @include a.breakpoint(tablet) {
+      width: 3.5rem;
+      height: 4rem;
+    }
+  }
+
+  &__animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

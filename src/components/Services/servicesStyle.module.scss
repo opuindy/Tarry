@@ -1,0 +1,13 @@
+@use '../../../styles/abstract/' as a;
+
+.services {
+  width: 100%;
+  margin-inline: auto;
+  margin-top: a.$margin-medium;
+  @include a.centerItem;
+  flex-direction: column;
+  justify-content: space-between;
+  @include a.breakpoint(tablet) {
+    margin-top: a.$margin-big;
+  }
+}

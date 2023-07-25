@@ -1,0 +1,45 @@
+@use '../../../styles/abstract/' as a;
+
+.skills {
+  width: 100%;
+  margin-inline: auto;
+  margin-top: a.$margin-small;
+  @include a.centerItem;
+  flex-direction: column;
+  justify-content: space-between;
+  @include a.breakpoint(tablet) {
+    margin-top: a.$margin-big;
+  }
+
+  &__captionContainer {
+    opacity: 0;
+    transform: translateY(a.rem(40));
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    margin-top: a.$margin-tiny;
+  }
+
+  &__techContainer {
+    margin-top: a.$margin-tiny;
+    margin-inline: auto;
+    opacity: 0;
+    transform: translateY(a.rem(40));
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    @include a.breakpoint(tablet) {
+      width: 80%;
+      text-align: center;
+    }
+  }
+  &__techText {
+    font-size: clamp(a.rem(16), 2vw + a.rem(3), a.rem(19));
+
+    span {
+      color: var(--primaryBlue);
+      font-weight: a.weight(bold);
+    }
+  }
+
+  &__animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,49 @@
+@use '../../../styles/' as a;
+
+.gotoButton {
+  width: max-content;
+  height: a.rem(25);
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  &__topText,
+  &__bottomText {
+    font-size: clamp(a.rem(17), 2vw + a.rem(4), a.rem(23));
+    margin-block: 0;
+    text-transform: uppercase;
+    width: 100%;
+    white-space: nowrap;
+    word-spacing: 0.05rem;
+    transition: transform 0.3s;
+
+    &_smallerText {
+      font-size: clamp(a.rem(14), 2vw + a.rem(3), a.rem(23));
+    }
+  }
+
+  &__topText {
+    color: var(--primaryBlue);
+    @include a.breakpoint(tablet) {
+      text-decoration: underline;
+      color: inherit;
+    }
+  }
+  &__bottomText {
+    color: var(--primaryBlue);
+    transform: translateY(100%);
+    display: none;
+    @include a.breakpoint(tablet) {
+      display: block;
+    }
+  }
+
+  &:hover &__topText {
+    transform: translateY(0%);
+    @include a.breakpoint(tablet) {
+      transform: translateY(-110%);
+    }
+  }
+  &:hover &__bottomText {
+    transform: translateY(-100%);
+  }
+}

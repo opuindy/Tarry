@@ -1,0 +1,128 @@
+@use '../../../../styles/abstract/' as a;
+
+.workCard {
+  width: 100%;
+  height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-radius: a.$border-radius;
+  position: relative;
+  overflow: hidden;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 0.8s ease;
+
+  @include a.breakpoint(tablet) {
+    // width: calc(50% - 1rem);
+    height: a.rem(429);
+  }
+
+  &__arrowUPContainer {
+    width: a.rem(43);
+    margin-top: a.$margin-tiny;
+    margin-bottom: auto;
+    margin-right: a.$margin-tiny;
+
+    @include a.centerItem;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: width 0.5s ease;
+  }
+
+  &__arrowUP {
+    width: a.rem(43);
+    @include a.centerItem;
+    font-size: clamp(a.rem(30), 10vw + a.rem(16), a.rem(55));
+    text-align: center;
+    transition: transform 0.5s ease;
+    span {
+      display: inline-block;
+      margin: auto;
+    }
+  }
+
+  &__moveUp {
+    transform: translateX(0%);
+    visibility: hidden;
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  &__moveDown {
+    transform: translateX(-100%) translateY(100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  &__workCardText {
+    margin-left: a.$margin-tiny;
+    font-size: clamp(a.rem(21), 2vw + a.rem(10), a.rem(25));
+    transition: transform 0.5s ease;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    background-size: 110% 110%;
+    cursor: pointer;
+
+    .workCard__arrowUPContainer {
+      width: a.rem(60);
+    }
+
+    .workCard__moveUp {
+      transform: translateX(115%);
+      visibility: visible;
+      opacity: 0;
+    }
+
+    .workCard__moveDown {
+      transform: translateX(0%) translateY(0%);
+      opacity: 1;
+    }
+
+    .workCard__workCardText {
+      transform: translateY(-50%);
+    }
+  }
+
+  // style for card
+
+  &__animate {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.link {
+  width: 100%;
+  // display: inline-block;
+  // flex-wrap: wrap;
+  // gap: 2rem;
+  @include a.breakpoint(tablet) {
+    width: calc(50% - 1rem);
+    height: a.rem(429);
+  }
+}

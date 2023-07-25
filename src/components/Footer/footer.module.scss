@@ -1,0 +1,212 @@
+@use '../../../styles/' as a;
+
+.footer {
+  width: 100%;
+  min-height: 50vh;
+  margin-top: a.$margin-medium;
+  @include a.breakpoint(tablet) {
+    margin-top: a.$margin-big;
+  }
+
+  &__container {
+    max-width: a.$max-width;
+    margin-inline: auto;
+    @include a.centerItem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__textContainer {
+    margin-bottom: auto;
+    width: 100%;
+    @include a.centerItem;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 1.3rem;
+    font-size: clamp(a.rem(17), 2vw + a.rem(1), a.rem(21));
+  }
+
+  &__workTextContainer {
+    width: max-content;
+    height: a.rem(95);
+    margin-inline: auto;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__workText {
+    margin: 0;
+    font-size: clamp(a.rem(21), 7vw + a.rem(20), a.rem(80));
+    font-family: var(--fontFamily1);
+    color: var(--primaryBlue);
+    font-weight: a.weight(bold);
+    text-transform: capitalize;
+    text-decoration: none;
+    width: 100%;
+    white-space: nowrap;
+    word-spacing: 0.05rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    @include a.breakpoint(tablet) {
+      text-decoration: underline;
+      color: inherit;
+      span {
+        color: var(--primaryBlue);
+      }
+    }
+  }
+  &__blueWorkText {
+    margin: 0;
+    text-decoration: none;
+    color: var(--primaryBlue);
+    transition: transform 0.3s;
+    transform: translateY(100%);
+  }
+
+  &__workTextContainer:hover &__workText {
+    transform: translateY(-110%);
+  }
+
+  &__logo_social_link_container {
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include a.breakpoint(tablet) {
+      width: max-content;
+      flex-direction: column;
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+
+  &__logo {
+    min-width: a.rem(281);
+    height: max-content;
+    @include a.centerItem;
+    position: relative;
+    margin-inline: auto;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      height: 1.5rem;
+      width: 1.5rem;
+      background: var(--primaryBlue);
+      z-index: -1;
+    }
+  }
+
+  &__logoName {
+    margin: 0;
+    // font-size: a.rem(70);
+    font-size: clamp(a.rem(72), 2vw + a.rem(1), a.rem(75));
+    font-family: var(--fontFamily1);
+    font-weight: a.weight(bold);
+    text-transform: capitalize;
+    text-decoration: none;
+    width: 100%;
+    white-space: nowrap;
+    word-spacing: 0.05rem;
+    transition: transform 0.3s;
+    // @include a.breakpoint(tablet) {
+    //   font-size: a.rem(75);
+    // }
+  }
+
+  &__footerContainer {
+    @include a.centerItem;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-inline: auto;
+    @include a.breakpoint(tablet) {
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: a.$margin-small;
+    }
+  }
+
+  &__socialLinksContainer {
+    min-width: a.rem(288);
+    padding-top: 4rem;
+    @include a.centerItem;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+  }
+
+  &__socialLinksText {
+    position: absolute;
+    top: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+  }
+
+  &__socialLink {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__pagesContainer {
+    width: max-content;
+    margin-top: a.$margin-small;
+    @include a.centerItem;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: auto;
+    padding-left: 40%;
+    @include a.breakpoint(tablet) {
+      padding-left: 0;
+      margin-top: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__pages {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: clamp(a.rem(21), 2vw + a.rem(1), a.rem(30));
+  }
+
+  &__linkContainer {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+
+    li {
+      color: var(--primaryWhite);
+      display: block;
+      margin-top: a.$margin-tiny;
+      font-size: clamp(a.rem(16), 2vw + a.rem(1), a.rem(18));
+
+      &:hover {
+        color: var(--primaryTextColor);
+      }
+    }
+  }
+
+  &__copyright {
+    margin: a.$margin-small auto;
+    font-size: clamp(a.rem(19), 2vw + a.rem(1), a.rem(22));
+    @include a.centerItem;
+
+    span {
+      color: var(--primaryBlue);
+    }
+  }
+}

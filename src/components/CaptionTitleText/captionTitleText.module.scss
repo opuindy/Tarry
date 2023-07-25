@@ -1,0 +1,31 @@
+@use '../../../styles/abstract/' as a;
+
+.div {
+  width: max-content;
+  text-align: left;
+  margin-right: auto;
+  h2 {
+    margin-block: 0;
+    width: 100%;
+    font-size: clamp(a.rem(83), 20vw + a.rem(2), a.rem(130));
+    text-transform: uppercase;
+    font-family: var(--fontFamily1);
+    font-weight: a.weight(regular);
+    word-spacing: 0.05rem;
+    z-index: 2;
+    width: 100%; /* Occupies full width of the parent div */
+    text-align: center; /* Centers the text horizontally */
+    white-space: nowrap; /* Prevents line breaks */
+  }
+
+  span {
+    color: var(--primaryBlue);
+  }
+}
+
+.smallText {
+  h2 {
+    font-size: clamp(a.rem(40), 10vw + a.rem(2), a.rem(70));
+    font-weight: a.weight(bold);
+  }
+}

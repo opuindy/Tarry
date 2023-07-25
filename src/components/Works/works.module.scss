@@ -1,0 +1,49 @@
+@use '../../../styles/abstract/' as a;
+
+.worksContainer {
+  width: 100%;
+  @include a.centerItem;
+  flex-direction: column;
+  margin-top: a.$margin-medium;
+
+  &__textContainer {
+    @include a.centerItem;
+    flex-direction: column;
+    margin-bottom: a.$margin-small;
+    text-align: center;
+    animation-name: moveUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+
+    p {
+      font-size: clamp(a.rem(16), 2vw + a.rem(3), a.rem(19));
+    }
+  }
+  &__captionContainer {
+    height: max-content;
+    display: flex;
+    margin-inline: auto;
+    @include a.centerItem;
+    overflow: hidden;
+  }
+
+  &__workCardContainer {
+    width: 100%;
+    @include a.centerItem;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    @include a.breakpoint(tablet) {
+      gap: 2rem;
+    }
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(a.rem(171));
+  }
+
+  100% {
+    transform: translateY(a.rem(0));
+  }
+}

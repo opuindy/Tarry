@@ -1,0 +1,163 @@
+@use '../../../styles/abstract/' as a;
+
+.banner {
+  width: 100%;
+  min-height: 30vh;
+  display: flex;
+  margin-inline: auto;
+  margin-top: a.$margin-small;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include a.breakpoint(tablet) {
+    margin-top: a.$margin-medium;
+  }
+
+  &__textContainer {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    margin-inline: auto;
+    @include a.centerItem;
+    overflow: hidden;
+  }
+
+  &__text {
+    width: 100%;
+    height: max-content;
+    @include a.centerItem;
+    position: relative;
+    animation-name: moveUp;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: clamp(0.5rem, 8vw + a.rem(2), 8rem);
+      width: clamp(0.5rem, 8vw + a.rem(2), 8rem);
+      background: var(--primaryBlue);
+      z-index: -1;
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+      animation-delay: 1s; // Delay the animation after the h1 animation completes
+      animation-fill-mode: both;
+    }
+  }
+
+  &__name {
+    margin-block: 0;
+    width: 100%;
+    font-size: clamp(2rem, 20vw + a.rem(2), 17rem);
+    text-transform: uppercase;
+    font-family: var(--fontFamily1);
+    font-weight: 700;
+    word-spacing: 0.05rem;
+    z-index: 2;
+    width: 100%; /* Occupies full width of the parent div */
+    text-align: center; /* Centers the text horizontally */
+    white-space: nowrap; /* Prevents line breaks */
+  }
+
+  &__imageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &__image {
+    height: 45vh;
+    width: 100%;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.05) 100%
+      ),
+      url('../../assets/images/banner.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    animation-name: moveDown;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    @include a.breakpoint(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 80vh;
+    }
+  }
+
+  &__textTitleContainer {
+    text-align: left;
+    padding-inline: 1rem;
+    padding-bottom: 1rem;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(100%); // Initially hidden below the container
+    transition: opacity 0.8s ease, transform 0.8s ease; // Smooth transition for opacity and transform
+    overflow: hidden;
+
+    &:first-child {
+      padding-bottom: 0;
+      margin-bottom: 0.7rem;
+      @include a.breakpoint(tablet) {
+        margin-bottom: 0;
+        padding-bottom: 1.2rem;
+      }
+    }
+    @include a.breakpoint(tablet) {
+      padding-inline: 1.2rem;
+      padding-bottom: 1.2rem;
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 2vw + a.rem(1), 2rem);
+      font-weight: a.weight(bold);
+      margin-block: 0;
+    }
+  }
+}
+
+.true {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(a.rem(170));
+  }
+
+  100% {
+    transform: translateY(a.rem(0));
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(a.rem(-250));
+  }
+
+  100% {
+    transform: translateY(a.rem(0));
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+}
