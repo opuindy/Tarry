@@ -10,7 +10,7 @@ import Work from './pages/WorkPage';
 import About from './pages/AboutMe';
 import Contact from './pages/ContactPage';
 import ErrorPage from './pages/ErrorPage';
-import SingleProject from './pages/singleProjectPage';
+import SingleProject from './pages/SingleProjectPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
