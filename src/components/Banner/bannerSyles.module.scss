@@ -50,7 +50,7 @@
   &__name {
     margin-block: 0;
     width: 100%;
-    font-size: clamp(2rem, 20vw + a.rem(2), 17rem);
+    font-size: clamp(4.3rem, 17vw + a.rem(1), 17rem);
     text-transform: uppercase;
     font-family: var(--fontFamily1);
     font-weight: 700;
