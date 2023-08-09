@@ -15,11 +15,12 @@ const AboutMe = () => {
             captivating and user-friendly web experiences.
             <br />
             <br />
-            I have successfully completed various personal projects,
-            demonstrating my ability to work independently and deliver
-            exceptional results. These experiences have sharpened my
-            problem-solving skills and deepened my understanding of industry
-            best practices.
+            In addition to the projects showcased here, I have undertaken
+            various confidential initiatives that I am unable to present
+            publicly. These undertakings highlight my ability to work
+            independently and achieve outstanding outcomes. They have played a
+            pivotal role in refining my problem-solving skills and deepening my
+            comprehension of industry best practices.
             <br />
             <br />
             I continuously update my skills to stay current with the latest web
