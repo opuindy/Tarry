@@ -34,9 +34,10 @@ const AboutMe = () => {
             }`}
             ref={textRef}
           >
-            I&apos;m a front-end developer with a passion for crafting
-            pixel-perfect websites. I&apos;ve mastered the art of turning
-            caffeine into code and turning ideas into interactive experiences.
+            A proficient front-end developer with professional expertise in
+            HTML, CSS, and JavaScript, with a knack for creating visually
+            appealing and user-friendly websites.Adept at collaborating with
+            teams and handling tight deadlines.
           </p>
           <p
             className={`${styles.aboutSection__text} ${
@@ -44,9 +45,9 @@ const AboutMe = () => {
             }`}
             ref={textRef2}
           >
-            With a touch of creativity and a dash of JavaScript, I bring designs
-            to life and make the web a more beautiful place, one line of code at
-            a time.
+            Loves all things tech and never backs down from a challenge when it
+            comes to pushing the boundaries of what&apos;s possible on the web.
+            Let&apos;s build something awesome together!
           </p>
         </div>
         <div>

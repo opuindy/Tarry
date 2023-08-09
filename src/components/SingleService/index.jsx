@@ -24,7 +24,7 @@ const SingleService = () => {
         </p>
         <p className={styles.service__serviceText}>
           <span>&#9889; </span>
-          <span>Optimize applications for maximum speed and </span>
+          <span>Optimize applications for maximum speed. </span>
         </p>
       </div>
     </article>
